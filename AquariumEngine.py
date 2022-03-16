@@ -91,11 +91,11 @@ class Fish(pygame.sprite.Sprite):
         """
         Update player's position according to the key pressed
         """
-        if keys_pressed[pygame.K_LEFT] and self.x - self.speed - AquariumGraphics.border_width/2 > AquariumGraphics.offset_canvas:  # LEFT
+        if keys_pressed[pygame.K_LEFT] and self.x - self.speed - AquariumGraphics.border_width/2 > AquariumGraphics.game_side_padding:  # LEFT
             self.x -= self.speed
             self.image = self.image_left
         elif keys_pressed[pygame.K_RIGHT] and self.x + self.speed + self.width + AquariumGraphics.border_width/2 \
-            < self.aquarium_width + AquariumGraphics.offset_canvas:  # RIGHT
+            < self.aquarium_width + AquariumGraphics.game_side_padding:  # RIGHT
             self.x += self.speed
             self.image = self.image_right
         else:
